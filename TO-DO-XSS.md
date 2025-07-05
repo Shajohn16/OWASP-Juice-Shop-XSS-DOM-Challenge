@@ -66,3 +66,39 @@ The challenge will be solved the moment you paste this in URL in the dearch bar 
 
 POC - ![image](https://github.com/user-attachments/assets/11546c62-9647-4c12-bca3-977f15f26cf0)
 
+Explanation - 
+
+✅ Correct Solution Path: Injecting via DOM Sink (Search Page)
+🔹 Step 1: Visit This URL (with payload in q parameter)
+plaintext
+Copy
+Edit
+http://localhost:3000/#/search?q=%3Ciframe%20src%3D%22javascript%3Aalert(%60xss%60)%22%3E
+🔐 Payload (Decoded):
+
+html
+Copy
+Edit
+<iframe src="javascript:alert(`xss`)">
+This uses an iframe tag with javascript: URI, which runs in the DOM sink.
+
+Juice Shop watches for alert(xss) from HTML injection into the DOM, not console directly.
+
+🔹 Step 2: What You Should See
+An alert box pops up: xss
+
+Juice Shop should mark the DOM XSS challenge as solved
+
+Confirm in the Score Board (http://localhost:3000/#/score-board)
+
+✅ Pro Tips
+If the above doesn’t mark the challenge as solved:
+
+Make sure you open the URL directly, don’t just paste the HTML into the console.
+
+Clear your session cookies and refresh (Ctrl+Shift+R) before retrying.
+
+Ensure the Juice Shop container is running the latest version (bkimminich/juice-shop).
+
+Your Juice Shop must not be running in CTF mode — that disables challenge auto-solves.
+
